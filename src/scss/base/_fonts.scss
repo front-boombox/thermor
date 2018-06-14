@@ -1,21 +1,59 @@
 @font-face {
-    font-family: 'latomedium';
-    src: url('lato-medium-webfont.woff2') format('woff2'),
-         url('lato-medium-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Lato';
+    src: url('../fonts/lato-medium-webfont.woff2') format('woff2'),
+         url('../fonts/lato-medium-webfont.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }
 @font-face {
-    font-family: 'latoregular';
-    src: url('lato-regular-webfont.woff2') format('woff2'),
-         url('lato-regular-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Lato';
+    src: url('../fonts/lato-regular-webfont.woff2') format('woff2'),
+         url('../fonts/lato-regular-webfont.woff') format('woff');
+    font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'latothin';
-    src: url('lato-thin-webfont.woff2') format('woff2'),
-         url('lato-thin-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Lato';
+    src: url('../fonts/lato-thin-webfont.woff2') format('woff2'),
+         url('../fonts/lato-thin-webfont.woff') format('woff');
+    font-weight: 100;
     font-style: normal;
+}
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.woff?pp805t') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-arrow-left:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-home:before {
+  content: "\e902";
+}
+.icon-search:before {
+  content: "\e903";
+}
+.icon-instagram:before {
+  content: "\e904";
+}
+.icon-youtube:before {
+  content: "\e905";
+}
+.icon-facebook:before {
+  content: "\e906";
 }
