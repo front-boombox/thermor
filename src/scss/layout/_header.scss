@@ -1,3 +1,112 @@
 .header{
-	
+	@include media('<tablet') {
+		position: relative;
+	}
+	&.flag-active{
+		.logo{
+			height: 490px;
+			padding: 8px;
+			@include media('<tablet') {
+				height: 50px !important;
+				padding: 8px 0 !important;
+			}
+			img{
+				width: 396px;
+				@include media('<tablet') {
+					width: 148px !important;
+				}
+			}
+		}
+	}
+	.top-line{
+		background: map-get($colors, 'brand-color');
+		padding: 7px 0;
+		height: 50px;
+		.container{
+			display: flex;
+			justify-content: flex-end;
+			position: relative;
+			height: 100%;
+		}
+	}
+	.logo{
+		@include animate(height padding);
+		flex-shrink: 0;
+		background: map-get($colors, 'brand-color');
+		position: absolute;
+		top: -7px;
+		left: 15px;
+		max-width: 413px;
+		height: 50px;
+		padding: 8px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img{
+			@include animate(width);
+			width: 148px;
+			vertical-align: top;
+		}
+	}
+	.top-menu{
+		@extend %listreset;
+		font-size: 16px;
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		position: relative;
+		z-index: 1;
+		margin-left: 150px;
+		text-align: center;
+		@include media('<900px') {
+			font-size: 14px;
+		}
+		@include media('<tablet') {
+			display: none;
+		}
+		li{
+			margin: 0 0 0 25px;
+			@include media('<900px') {
+				margin-left: 15px;
+			}
+		}
+		a{
+			@include animate(opacity);
+			color: map-get($colors, 'white');
+			text-decoration: none;
+			&:hover{
+				opacity: .7;
+			}
+		}
+	}
+	.navbar{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding: 14px 15px;
+		@include media('>=tablet') {
+			display: flex !important;
+		}
+		@include media('<tablet') {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: map-get($base, 'base-background-color');
+		}
+	}
+	.social{
+		margin: 0 0 0 140px;
+		@include media('<desktop') {
+			margin-left: 25px;
+		}
+		@include media('<tablet') {
+			margin: 30px 0;
+			justify-content: center;
+		}
+		li{
+			margin: 0 5px;
+		}
+	}
 }

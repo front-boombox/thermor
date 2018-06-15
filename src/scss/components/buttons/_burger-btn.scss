@@ -1,0 +1,60 @@
+.burger-btn {
+    display: none;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    background: none;
+    border: none;
+    padding: 14px 16px;
+    z-index: 5;
+    font-size: 0;
+    outline: none;
+    @include media('<tablet') {
+        display: block;
+        margin: 0;
+        width: 35px;
+        height: 35px;
+    }
+    span {
+        @include animate(transform margin, .2s);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin-left: -10px;
+        margin-top: -1px;
+        background-color: map-get($colors, 'white');
+        user-select: none;
+        &:before,
+        &:after {
+            @include animate(transform margin, .2s);
+            content: '';
+            position: absolute;
+            left: 0;
+            border-radius: 1px;
+            width: 100%;
+            height: 100%;
+            background: map-get($colors, 'white');
+            margin-top: -6px;
+        }
+        &:after {
+            margin-top: 6px;
+        }
+    }
+    &.active {
+        span {
+            background-color: transparent;
+            &:before {
+                transform: rotate(45deg);
+                margin-top: 0;
+            }
+            &:after {
+                transform: rotate(-45deg);
+                margin-top: 0;
+            }
+        }
+    }
+}

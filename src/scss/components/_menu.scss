@@ -1,0 +1,46 @@
+.menu{
+	@extend %listreset;
+	font-size: 21px;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	@include media('<tablet') {
+		display: block;
+	}
+	li{
+		margin: 0 0 0 45px;
+		@include media('<desktop') {
+			margin-left: 35px;
+		}
+		@include media('<tablet') {
+			margin: 0;
+		}
+	}
+	a{
+		@include animate(opacity);
+		color: map-get($colors, 'brand-color');
+		text-decoration: none;
+		@include media('<tablet') {
+			display: block;
+			padding: 7px;
+		}
+		&:hover{
+			opacity: .7;
+		}
+	}
+	.icon-home{
+		font-size: 35px;
+		@include media('<tablet') {
+			display: none;
+		}
+	}
+	.word{
+		display: none;
+		@include media('<tablet') {
+			display: inline;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+.social{
+	@extend %listreset;
+	display: flex;
+	li{
+		margin: 0 0 0 11px;
+	}
+	a{
+		@include animate(color background);
+		color: #ababb2;
+		text-decoration: none;
+		width: 29px;
+		height: 29px;
+		display: block;
+		border-radius: 3px;
+		border: 1px solid #ababb2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&:hover{
+			color: map-get($colors, 'white');
+			background: #ababb2;
+		}
+	}
+}

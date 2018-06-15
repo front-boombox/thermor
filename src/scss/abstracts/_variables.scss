@@ -20,7 +20,8 @@ $headings: (
 
 // colors
 $colors: (
-  'brand-color': #e62814
+  'brand-color': #e62814,
+  'white': #fff
 );
 
 // Global vars for body typography
@@ -49,7 +50,7 @@ $forms: (
 $breakpoints: (
   'phone': 480px,
   'tablet': 768px,
-  'desktop': 980px,
+  'desktop': 1024px,
   'widescreen': 1200px
 );
 
