@@ -46,9 +46,10 @@
 		}
 		.title{
 			font-size: 21px;
+			font-weight: 400;
 			display: block;
 			text-transform: uppercase;
-			word-break: break-word;
+			word-break: break-all;
 			@include media('<desktop') {
 				font-size: 18px;
 			}
