@@ -6,6 +6,8 @@
 import logoAnimate from './modules/logo-animate';
 import burger from './modules/burger';
 import mainSlider from './modules/main-slider';
+import productSlider from './modules/product-slider';
+import productZoom from './modules/product-zoom';
 
 (($) => {
     'use strict';
@@ -15,6 +17,8 @@ import mainSlider from './modules/main-slider';
         logoAnimate.logoAnimateInit($);
         burger.burgerInit($);
         mainSlider.mainSliderInit($);
+        productSlider.productSliderInit($);
+        productZoom.productZoomInit($);
     });
 
 })(jQuery);

@@ -1,14 +1,16 @@
 .menu{
-	@extend %listreset;
-	font-size: 21px;
-	text-transform: uppercase;
-	display: flex;
-	align-items: center;
-	position: relative;
-	z-index: 1;
-	text-align: center;
-	@include media('<tablet') {
-		display: block;
+	ul{
+		@extend %listreset;
+		font-size: 21px;
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		@include media('<tablet') {
+			display: block;
+		}
 	}
 	li{
 		margin: 0 0 0 45px;

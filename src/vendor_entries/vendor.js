@@ -4,5 +4,7 @@
 
 module.exports = [
   // './node_modules/jquery/dist/jquery.js'
-  './node_modules/slick-carousel/slick/slick.min.js'
+  './node_modules/slick-carousel/slick/slick.min.js',
+  './node_modules/jquery-zoom/jquery.zoom.min.js',
+  './node_modules/Tabslet/jquery.tabslet.min.js'
 ];

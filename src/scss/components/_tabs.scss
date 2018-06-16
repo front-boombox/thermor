@@ -1,0 +1,30 @@
+.tabs{
+	.tabs-head{
+		@extend %listreset;
+		font-size: 21px;
+		font-weight: 100;
+		text-transform: uppercase;
+		display: flex;
+		li{
+			margin: 0 55px 0 0;
+			&.active{
+				a{
+					color: map-get($colors, 'brand-color');
+					border-color: map-get($colors, 'brand-color');
+				}
+			}
+		}
+		a{
+			@include animate(color border);
+			color: #5e5e5e;
+			text-decoration: none;
+			border-bottom: 4px solid #c7c9ca;
+			display: inline-block;
+			padding: 5px 7px;
+			&:hover{
+				color: map-get($colors, 'brand-color');
+				border-color: map-get($colors, 'brand-color');
+			}
+		}
+	}
+}

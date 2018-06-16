@@ -1,0 +1,28 @@
+.breadcrumbs{
+	@extend %listreset;
+	font-size: 13px;
+	text-transform: uppercase;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 0 50px;
+	li{
+		&:after{
+			content: '/';
+			color: map-get($colors, 'blue');
+			margin: 0 5px;
+		}
+		&:last-child{
+			&:after{
+				display: none;
+			}
+		}
+	}
+	a{
+		@include animate(opacity);
+		color: map-get($colors, 'blue');
+		text-decoration: none;
+		&:hover{
+			opacity: .7;
+		}
+	}
+}
