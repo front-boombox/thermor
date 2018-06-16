@@ -1,0 +1,11 @@
+.features{
+	@extend %listreset;
+	display: flex;
+	flex-wrap: wrap;
+	li{
+		margin: 0 25px 0 0;
+	}
+	img{
+		vertical-align: top;
+	}
+}

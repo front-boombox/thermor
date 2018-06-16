@@ -8,6 +8,8 @@ import burger from './modules/burger';
 import mainSlider from './modules/main-slider';
 import productSlider from './modules/product-slider';
 import productZoom from './modules/product-zoom';
+import customSelect from './modules/custom-select';
+import tabs from './modules/tabs';
 
 (($) => {
     'use strict';
@@ -19,6 +21,8 @@ import productZoom from './modules/product-zoom';
         mainSlider.mainSliderInit($);
         productSlider.productSliderInit($);
         productZoom.productZoomInit($);
+        customSelect.customSelectInit($);
+        tabs.tabsInit($);
     });
 
 })(jQuery);

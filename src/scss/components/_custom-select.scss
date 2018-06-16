@@ -1,0 +1,37 @@
+.jcf-select{
+	border-radius: 5px;
+	border: 2px solid #a4a4a4;
+	.jcf-select-text{
+		font-size: 17px;
+		font-weight: 100;
+		color: map-get($colors, 'grey');
+		text-transform: uppercase;
+	}
+	.jcf-select-opener{
+		background: transparent;
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 26px;
+			width: 1px;
+			height: 100%;
+			display: block;
+			background: map-get($colors, 'grey');
+		}
+		&:after{
+			content: '';
+			width: 0;
+			height: 0;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-top: 12px solid #ababab;
+			position: absolute;
+			top: 5px;
+			right: 6px;
+		}
+	}
+}
+.jcf-focus{
+	border-color: #a4a4a4 !important;
+}

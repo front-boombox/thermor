@@ -62,10 +62,10 @@
   },
   "dependencies": {
     "include-media": "^1.4.9",
+    "jcf": "^1.2.3",
     "jquery": "^3.3.1",
     "jquery-zoom": "^1.7.21",
     "normalize.css": "^5.0.0",
-    "slick-carousel": "^1.8.1",
-    "tabslet": "^1.7.3"
+    "slick-carousel": "^1.8.1"
   }
 }

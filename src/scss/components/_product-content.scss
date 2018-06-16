@@ -5,11 +5,27 @@
 	}
 	.product-info{
 		padding: 0 0 0 70px;
+		flex-grow: 1;
+	}
+	.features-part{
+		display: flex !important;
+		justify-content: space-between;
+	}
+	.tabs-head-holder{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.product-info-container{
+		display: none;
+		&.active{
+			display: block;
+		}
 	}
 	.product-name{
 		font-size: 21px;
 		font-weight: 400;
-		color: #5e5e5e;
+		color: map-get($colors, 'grey');
 		text-transform: uppercase;
 		margin: 0 0 15px;
 	}
