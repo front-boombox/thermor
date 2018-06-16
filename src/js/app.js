@@ -5,6 +5,7 @@
 
 import logoAnimate from './modules/logo-animate';
 import burger from './modules/burger';
+import mainSlider from './modules/main-slider';
 
 (($) => {
     'use strict';
@@ -13,6 +14,7 @@ import burger from './modules/burger';
     $(() => {
         logoAnimate.logoAnimateInit($);
         burger.burgerInit($);
+        mainSlider.mainSliderInit($);
     });
 
 })(jQuery);

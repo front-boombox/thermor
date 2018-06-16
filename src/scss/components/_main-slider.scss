@@ -1,0 +1,92 @@
+.main-slider{
+	.slick-next, .slick-prev{
+		width: 30px;
+		height: 30px;
+		z-index: 1;
+		&:hover{
+			&:before{
+				opacity: 1;
+			}
+		}
+		&:before{
+			@include animate(opacity);
+			font: 30px 'icomoon';
+			opacity: .47;
+			@include media('<tablet') {
+				font-size: 20px;
+			}
+		}
+	}
+	.slick-next{
+		@extend .icon-arrow-right;
+		right: calc(50% - 685px);
+		@include media('<1400px') {
+			right: 15px;
+		}
+	}
+	.slick-prev{
+		@extend .icon-arrow-left;
+		left: calc(50% - 685px);
+		@include media('<1400px') {
+			left: 15px;
+		}
+	}
+	.slick-slide{
+		img{
+			width: 100%;
+		}
+	}
+	.slick-dots{
+		bottom: 30px;
+		@include media('<tablet') {
+			bottom: 20px;
+		}
+		li{
+			width: 30px;
+			height: 30px;
+			margin: 0 6px;
+			@include media('<tablet') {
+				width: 20px;
+				height: 20px;
+			}
+			&.slick-active, &:hover{
+				button{
+					&:before{
+						background: #a7a7ae;
+					}
+				}
+			}
+			button{
+				width: 30px;
+				height: 30px;
+				@include media('<tablet') {
+					width: 20px;
+					height: 20px;
+				}
+				&:before{
+					@include animate(background);
+					content: '';
+					width: 30px;
+					height: 30px;
+					background: rgba(255, 255, 255, .77);
+					border-radius: 50%;
+					opacity: 1;
+					@include media('<tablet') {
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+.slick-list {
+    .slick-loading & {
+        background: #fff url("../images/ajax-loader.gif") center center no-repeat;
+    }
+}
+.slick-prev:before,
+.slick-next:before,
+.slick-dots li button:before{
+	font-family: Arial, Helvetica, sans-serif;
+}
