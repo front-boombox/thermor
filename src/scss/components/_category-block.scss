@@ -1,0 +1,61 @@
+.category-block{
+	margin: 0 0 60px;
+	.container{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		&:after{
+			content: '';
+			width: 32%;
+			height: 0;
+			display: block;
+			@include media('<phone') {
+				display: none;
+			}
+		}
+	}
+	.item{
+		width: 32%;
+		margin: 0 0 40px;
+		@include media('<desktop') {
+			margin-bottom: 30px;
+		}
+		@include media('<phone') {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		a{
+			@include animate(opacity);
+			text-decoration: none;
+			display: block;
+			&:hover{
+				opacity: .7;
+			}
+		}
+		.img-holder{
+			margin: 0 0 35px;
+			@include media('<desktop') {
+				margin-bottom: 15px;
+			}
+			@include media('<phone') {
+				margin-bottom: 10px;
+			}
+		}
+		img{
+			width: 100%;
+			vertical-align: top;
+		}
+		.title{
+			font-size: 21px;
+			display: block;
+			text-transform: uppercase;
+			word-break: break-word;
+			@include media('<desktop') {
+				font-size: 18px;
+			}
+			@include media('<tablet') {
+				font-size: 16px;
+			}
+		}
+	}
+}
