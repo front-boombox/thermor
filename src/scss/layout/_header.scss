@@ -1,7 +1,10 @@
 .header{
-	@include media('<tablet') {
-		position: relative;
-	}
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background: map-get($colors, 'white');
 	&.flag-active{
 		.logo{
 			height: 490px;
@@ -96,6 +99,8 @@
 			right: 0;
 			z-index: 1;
 			background: map-get($base, 'base-background-color');
+			overflow: auto;
+			max-height: calc(100vh - 50px);
 		}
 	}
 	.social{

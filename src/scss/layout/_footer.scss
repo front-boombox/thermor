@@ -1,6 +1,8 @@
 .footer{
 	background: map-get($colors, 'brand-color');
 	padding: 12px 0;
+	position: relative;
+	z-index: 2;
 	.container{
 		display: flex;
 		justify-content: space-between;

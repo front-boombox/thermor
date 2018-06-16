@@ -1,9 +1,6 @@
 .main-slider{
 	&.slick-slider{
-		margin-bottom: 65px;
-		@include media('<desktop') {
-			margin-bottom: 30px;
-		}
+		margin-bottom: 0;
 	}
 	.slick-next, .slick-prev{
 		width: 30px;

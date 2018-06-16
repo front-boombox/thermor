@@ -15,3 +15,31 @@ body{
 	margin: 0 auto;
 	padding: 0 15px;
 }
+/* fixed top on scroll START */
+.fixed-top{
+	position: fixed;
+	top: 118px;
+	left: 0;
+	right: 0;
+	@include media('<tablet') {
+		top: 50px;
+	}
+}
+.content-wrap{
+	padding: 30px 0 60px;
+	margin-top: 50%;
+	position: relative;
+	z-index: 2;
+	background: map-get($colors, 'white');
+	@include media('<widescreen') {
+		margin-top: 55%;
+	}
+	@include media('<tablet') {
+		margin-top: 50%;
+		padding-bottom: 30px;
+	}
+	@include media('<phone') {
+		margin-top: 57%;
+	}
+}
+/* fixed top on scroll END */
