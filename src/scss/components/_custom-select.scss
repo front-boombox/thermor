@@ -35,3 +35,30 @@
 .jcf-focus{
 	border-color: #a4a4a4 !important;
 }
+.jcf-select-drop{
+	.jcf-select-drop-content{
+		border: none;
+		box-shadow: 0 0 9px 0 rgba(#040001, .66);
+		border-radius: 5px;
+		margin-top: 7px;
+	}
+	.jcf-list{
+		font-size: 11px;
+		font-weight: 500;
+		text-transform: uppercase;
+		border-radius: 5px;
+		padding: 6px;
+		overflow: hidden;
+		ul{
+			li{
+				&:not(:last-child){
+					border-bottom: 1px solid #c4c4c4 !important;
+				}
+			}
+		}
+		.jcf-option{
+			color: #000;
+			padding: 3px 5px 0;
+		}
+	}
+}

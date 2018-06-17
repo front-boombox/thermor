@@ -10,6 +10,7 @@
 	.features-part{
 		display: flex !important;
 		justify-content: space-between;
+		margin: 0 0 30px;
 	}
 	.tabs-head-holder{
 		display: flex;
@@ -18,8 +19,37 @@
 	}
 	.product-info-container{
 		display: none;
+		font-weight: 100;
+		margin: 0 0 100px;
 		&.active{
 			display: block;
+		}
+		ul{
+			@extend %listreset;
+			margin: 0 0 24px;
+			li{
+				&:before{
+					content: '-';
+					margin: 0 10px 0 0;
+				}
+			}
+		}
+		table{
+			border-collapse: collapse;
+			width: 100%;
+			td{
+				width: 50%;
+				padding: 1px 10px;
+				border-bottom: 1px solid #c4c4ce;
+			}
+		}
+		h2{
+			font-size: 21px;
+			font-weight: 400;
+			margin: 0 0 24px;
+		}
+		p{
+			margin: 0 0 24px;
 		}
 	}
 	.product-name{
