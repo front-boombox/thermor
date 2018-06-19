@@ -1,11 +1,30 @@
 .jcf-select{
 	border-radius: 5px;
 	border: 2px solid #a4a4a4;
+	width: 100%;
+	max-width: 310px;
+	@include media('<widescreen') {
+		max-width: 150px;
+	}
+	@include media('<=desktop') {
+		max-width: 310px;
+	}
+	@include media('<tablet') {
+		margin-bottom: 25px;
+		max-width: none;
+		height: 35px;
+	}
 	.jcf-select-text{
 		font-size: 17px;
 		font-weight: 100;
 		color: map-get($colors, 'grey');
 		text-transform: uppercase;
+		@include media('<widescreen') {
+			font-size: 14px;
+		}
+		@include media('<tablet') {
+			line-height: 35px;
+		}
 	}
 	.jcf-select-opener{
 		background: transparent;
@@ -29,6 +48,9 @@
 			position: absolute;
 			top: 5px;
 			right: 6px;
+			@include media('<tablet') {
+				top: 11px;
+			}
 		}
 	}
 }
@@ -59,6 +81,9 @@
 		.jcf-option{
 			color: #000;
 			padding: 3px 5px 0;
+			@include media('<tablet') {
+				padding: 7px 5px 4px;
+			}
 		}
 	}
 }

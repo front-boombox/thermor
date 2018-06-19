@@ -12,6 +12,9 @@
 		}
 	}
 	.menu{
+		@include media('<widescreen') {
+			width: 100%;
+		}
 		ul{
 			font-size: 16px;
 			@include media('<widescreen') {

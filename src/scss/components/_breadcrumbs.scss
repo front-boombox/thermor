@@ -4,7 +4,13 @@
 	text-transform: uppercase;
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0 0 50px;
+	margin: 15px 0 50px;
+	@include media('<widescreen') {
+		margin-bottom: 30px;
+	}
+	@include media('<tablet') {
+		margin-bottom: 20px;
+	}
 	li{
 		&:after{
 			content: '/';

@@ -4,8 +4,26 @@
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
+	@include media('<widescreen') {
+		align-items: flex-start;
+	}
+	@include media('<=desktop') {
+		width: 100%;
+	}
 	li{
-		margin: 0 0 0 25px;
+		margin: 0 0 30px;
+		padding: 0 0 0 25px;
+		@include media('<widescreen') {
+			padding-left: 15px;
+			margin-bottom: 15px;
+		}
+		@include media('<=desktop') {
+			margin-bottom: 20px;
+			padding: 0 15px 0 0;
+		}
+		@include media('<tablet') {
+			padding-right: 5px;
+		}
 	}
 	a{
 		@include animate(opacity);
@@ -22,5 +40,8 @@
 		vertical-align: top;
 		display: inline-block;
 		margin: 0 10px 0 0;
+		@include media('<tablet') {
+			margin-right: 5px;
+		}
 	}
 }

@@ -1,9 +1,19 @@
 .features{
 	@extend %listreset;
 	display: flex;
-	flex-wrap: wrap;
+	@include media('<=desktop') {
+		width: 100%;
+		flex-wrap: wrap;
+	}
 	li{
-		margin: 0 25px 0 0;
+		margin: 0 0 30px;
+		padding: 0 25px 0 0;
+		@include media('<widescreen') {
+			padding-right: 15px;
+		}
+		@include media('<=desktop') {
+			margin-bottom: 20px;
+		}
 	}
 	img{
 		vertical-align: top;

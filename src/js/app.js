@@ -10,6 +10,8 @@ import productSlider from './modules/product-slider';
 import productZoom from './modules/product-zoom';
 import customSelect from './modules/custom-select';
 import tabs from './modules/tabs';
+import headerScroll from './modules/header-scroll';
+import createProductPopup from './modules/create-product-popup';
 
 (($) => {
     'use strict';
@@ -23,6 +25,8 @@ import tabs from './modules/tabs';
         productZoom.productZoomInit($);
         customSelect.customSelectInit($);
         tabs.tabsInit($);
+        headerScroll.headerScrollInit($);
+        createProductPopup.createProductPopupInit($);
     });
 
 })(jQuery);
