@@ -34,8 +34,6 @@ let createProductPopup = {
                     });
                     $(".popup-slider .popup-slider-for .slick-slide").zoom({on:"grab"});
                 }
-            }).done(function (html){
-
             });
 
         });

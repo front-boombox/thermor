@@ -1,8 +1,11 @@
-.category-block{
+.category-tabs{
 	.container{
+		@extend %listreset;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		margin: 0 auto;
+		padding: 0 15px;
 		&:after{
 			content: '';
 			width: 32%;
@@ -22,6 +25,13 @@
 		@include media('<phone') {
 			width: 100%;
 			margin-bottom: 20px;
+		}
+		&.active{
+			.title{
+				&:after{
+					transform: rotate(90deg);
+				}
+			}
 		}
 		a{
 			@include animate(opacity);
@@ -51,12 +61,37 @@
 			display: block;
 			text-transform: uppercase;
 			word-break: break-all;
+			position: relative;
+			padding: 0 50px 0 0;
 			@include media('<desktop') {
 				font-size: 18px;
 			}
 			@include media('<tablet') {
 				font-size: 16px;
 			}
+			&:after{
+				@include animate(transform);
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 0;
+				margin-top: -15px;
+				width: 0;
+				height: 0;
+				border-top: 15px solid transparent;
+				border-left: 25px solid red;
+				border-bottom: 15px solid transparent;
+				@include media('<desktop') {
+					margin-top: -10px;
+					border-width: 10px 0 10px 20px;
+				}
+			}
+		}
+	}
+	.category-tabs-content{
+		display: none;
+		&.active{
+			display: block;
 		}
 	}
 }

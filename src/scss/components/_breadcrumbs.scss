@@ -11,6 +11,9 @@
 	@include media('<tablet') {
 		margin-bottom: 20px;
 	}
+	.catalog-page &{
+		margin-bottom: 15px;
+	}
 	li{
 		&:after{
 			content: '/';
