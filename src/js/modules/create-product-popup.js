@@ -13,26 +13,26 @@ let createProductPopup = {
                 url: "../../popup.html",
                 success: function (html) {
                     $("#insertdata").html(html);
-                    $('.popup-slider-for').slick({
+                    $('.popup-slider .popup-slider-for').slick({
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         arrows: true,
                         fade: true,
-                        asNavFor: '.popup-slider-nav'
+                        asNavFor: '.popup-slider .popup-slider-nav'
                     });
 
-                    $('.popup-slider-nav').slick({
+                    $('.popup-slider .popup-slider-nav').slick({
                         slidesToShow: 3,
                         slidesToScroll: 1,
                         arrows: false,
-                        asNavFor: '.popup-slider-for',
+                        asNavFor: '.popup-slider .popup-slider-for',
                         dots: false,
                         vertical: true,
                         verticalSwiping: true,
                         focusOnSelect: true,
                         
                     });
-                    $(".slick-slide ").zoom({on:"grab"});
+                    $(".popup-slider .popup-slider-for .slick-slide").zoom({on:"grab"});
                 }
             }).done(function (html){
 

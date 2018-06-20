@@ -30,7 +30,7 @@
 	    width: 1530px;
 	    height: calc(100vh - 150px);
 	    background-color: #fff;
-	    border-radius: 10px;
+	    border-radius: 7px;
 	    padding: 20px;
 	    @include media('<1600px') {
 	    	width: calc(100% - 60px);
@@ -54,7 +54,7 @@
 	    &:before, &:after{
 	    	content: '';
 	    	position: absolute;
-			top: 17px;
+			top: 18px;
 			left: 6px;
 	    	display: block;
 	    	width: 27px;
@@ -66,5 +66,124 @@
 	    &:after{
 	    	transform: rotate(-45deg);
 	    }
+	}
+	.product-title{
+		display: block;
+		font-size: 21px;
+		font-weight: 100;
+		color: #000;
+		text-transform: uppercase;
+		padding: 0 50px 0 0;
+	}
+	.popup-slider{
+		.popup-slider-for {
+			width: 830px;
+			height: 100%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 60px 0;
+			@include media('<1321px') {
+				left: 40px;
+			    transform: translateY(-50%);
+			}
+			@include media('<widescreen') {
+				width: 670px;
+			}
+			@include media('<993px') {
+				width: 500px;
+			}
+			@include media('<tablet') {
+				width: 100%;
+				left: 0;
+			}
+			@include media('<phone') {
+				padding: 80px 0;
+			}
+			.slick-arrow {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 0;
+				outline: none;
+				border: none;
+				cursor: pointer;
+				width: 32px;
+				height: 52px;
+				z-index: 10;
+				padding: 0;
+				&:before{
+					@include animate(opacity);
+					font: 52px 'icomoon' !important;
+					color: map-get($colors, 'light-grey');
+				}
+				&.slick-prev{
+					@extend .icon-arrow-left;
+					left: 0;
+					@include media('<tablet') {
+						left: 15px;
+					}
+				}
+				&.slick-next{
+					@extend .icon-arrow-right;
+					right: 0;
+					@include media('<tablet') {
+						right: 15px;
+					}
+				}
+			}
+			.slick-list, .slick-track{
+				height: 100%;
+			}
+			.slide{
+				text-align: center;
+				outline: none;
+				img{
+					height: 100%;
+					width: 100%;
+					display: inline-block;
+					object-fit: contain;
+				}
+			}
+		}
+		.popup-slider-nav {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 120px;
+			margin-right: 75px;
+			@include media('<desktop') {
+				margin-right: 25px;
+			}
+			@include media('<tablet') {
+				display: none;
+			}
+			.slide{
+				width: 120px;
+				height: 120px;
+				border: 1px solid map-get($colors, 'light-grey');
+				border-radius: 7px;
+				position: relative;
+				margin: 10px 0;
+				outline: none;
+				img{
+					height: 100%;
+					display: inline-block;
+				}
+			}
+			.slide-image{
+				overflow: hidden;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				height: 100%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				padding: 15px 0;
+			}
+		}
 	}
 }

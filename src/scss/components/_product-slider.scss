@@ -1,6 +1,6 @@
 .product-slider{
 	&.slider-for{
-		border: 2px solid #c4c4ce;
+		border: 2px solid map-get($colors, 'light-grey');
 		border-radius: 10px;
 		overflow: hidden;
 		margin-bottom: 32px;
@@ -32,7 +32,7 @@
 		}
 		.slick-slide{
 			width: 116px;
-			border: 2px solid #c4c4ce;
+			border: 2px solid map-get($colors, 'light-grey');
 			border-radius: 10px;
 			overflow: hidden;
 			margin: 0 24px;
