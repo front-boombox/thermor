@@ -12,7 +12,7 @@ import customSelect from './modules/custom-select';
 import tabs from './modules/tabs';
 import headerScroll from './modules/header-scroll';
 import createProductPopup from './modules/create-product-popup';
-// import hideCategory from './modules/hide-category';
+import hideCategory from './modules/hide-category';
 
 (($) => {
     'use strict';
@@ -28,7 +28,7 @@ import createProductPopup from './modules/create-product-popup';
         tabs.tabsInit($);
         headerScroll.headerScrollInit($);
         createProductPopup.createProductPopupInit($);
-        // hideCategory.hideCategoryInit($);
+        hideCategory.hideCategoryInit($);
     });
 
 })(jQuery);

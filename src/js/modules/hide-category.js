@@ -6,16 +6,16 @@ let hideCategory = {
             return;
         }
 
-        $categoryItem.on('click', function(){
-            showCategoryHandler.call(this);
-        });
-
-        function showCategoryHandler(){
-            if($(this).hasClass('active')){
-                $(this).removeClass('active');
-                $('.category-tabs-content').fadeOut('slow');
+        $categoryItem.on('click', function () {
+            if($(this).hasClass('current')){
+                $('.category-tabs-content').css('display', 'none');
+                $(this).removeClass('current');
+            } else {
+                $('.category-tabs-content').css('height', 'auto');
+                $('.category-tabs .item').removeClass('current');
+                $(this).addClass('current');
             }
-        }
+        });
     }
 
 };
