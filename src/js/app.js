@@ -13,6 +13,7 @@ import tabs from './modules/tabs';
 import headerScroll from './modules/header-scroll';
 import createProductPopup from './modules/create-product-popup';
 import hideCategory from './modules/hide-category';
+import fixedTop from './modules/fixed-top';
 
 (($) => {
     'use strict';
@@ -29,6 +30,7 @@ import hideCategory from './modules/hide-category';
         headerScroll.headerScrollInit($);
         createProductPopup.createProductPopupInit($);
         hideCategory.hideCategoryInit($);
+        fixedTop.fixedTopInit($);
     });
 
 })(jQuery);

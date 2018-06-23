@@ -1,0 +1,75 @@
+.static-block{
+	font-weight: 100;
+	line-height: 1.4;
+	padding: 70px 0 30px;
+	@include media('<tablet') {
+		font-size: 18px;
+		padding: 35px 0 15px;
+	}
+	&.grey-bg{
+		background: #f2f2f2;
+	}
+	.container{
+		@extend %clearfix;
+	}
+	h1{
+		font-size: 26px;
+		font-weight: 400;
+		color: map-get($colors, 'brand-color');
+		text-transform: uppercase;
+		margin: 0 0 30px;
+		@include media('<tablet') {
+			font-size: 21px;
+			margin-bottom: 15px;
+		}
+	}
+	ul{
+		@extend %listreset;
+		margin: 0 0 24px;
+		@include media('<tablet') {
+			margin-bottom: 15px;
+		}
+		li{
+			&:before{
+				content: '-';
+				margin: 0 10px 0 0;
+			}
+		}
+	}
+	address{
+		font-style: normal;
+		line-height: 1.6;
+		margin: 0 0 45px;
+		@include media('<tablet') {
+			margin-bottom: 15px;
+		}
+	}
+	p{
+		margin: 0 0 35px;
+		@include media('<tablet') {
+			margin-bottom: 15px;
+		}
+	}
+	.align-right{
+		float: right;
+		margin: 0 0 10px 25px;
+		@include media('<tablet') {
+			margin: 0 0 15px;
+		}
+	}
+	.align-left{
+		float: left;
+		margin: 0 25px 10px 0;
+		@include media('<tablet') {
+			margin: 0 0 15px;
+		}
+	}
+	img{
+		width: 50%;
+		max-width: 670px;
+		@include media('<tablet') {
+			width: 100%;
+			max-width: none;
+		}
+	}
+}

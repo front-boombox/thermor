@@ -1,6 +1,6 @@
-var headerScroll = {
+let headerScroll = {
     headerScrollInit: function($) {
-        var $header = $('.header');
+        let $header = $('.header');
 
         if (!$header.length) {
             return;

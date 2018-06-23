@@ -26,8 +26,17 @@ body{
 	top: 118px;
 	left: 0;
 	right: 0;
+	/*for demo (after demo uncomment it)*/
+	// max-height: calc(100vh - 118px);
+	// overflow: auto;
 	@include media('<tablet') {
 		top: 50px;
+		/*for demo (after demo uncomment it)*/
+		// max-height: calc(100vh - 50px);
+	}
+	.about-us-page &{
+		/*for demo (after demo remove it)*/
+		position: static;
 	}
 }
 .content-wrap{
@@ -45,6 +54,11 @@ body{
 	}
 	@include media('<phone') {
 		margin-top: calc(57% - 50px);
+	}
+	.about-us-page &{
+		padding: 0;
+		/*for demo (after demo remove it)*/
+		margin-top: 0 !important;
 	}
 }
 /* fixed top on scroll END */
