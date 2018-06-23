@@ -14,6 +14,7 @@ import headerScroll from './modules/header-scroll';
 import createProductPopup from './modules/create-product-popup';
 import hideCategory from './modules/hide-category';
 import fixedTop from './modules/fixed-top';
+import search from './modules/search';
 
 (($) => {
     'use strict';
@@ -31,6 +32,7 @@ import fixedTop from './modules/fixed-top';
         createProductPopup.createProductPopupInit($);
         hideCategory.hideCategoryInit($);
         fixedTop.fixedTopInit($);
+        search.searchInit($);
     });
 
 })(jQuery);

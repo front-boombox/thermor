@@ -61,6 +61,7 @@
     "start": "gulp"
   },
   "dependencies": {
+    "gmaps": "^0.4.24",
     "include-media": "^1.4.9",
     "jcf": "^1.2.3",
     "jquery": "^3.3.1",

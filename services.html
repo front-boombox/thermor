@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Thermor</title>
+    <link media="all" rel="stylesheet" href="assets/css/vendor.min.css">
+    <link media="all" rel="stylesheet" href="assets/css/style.min.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="header flag-active">
+            <div class="top-line">
+                <div class="container">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="assets/images/logo.svg" width="396" height="96" alt="Thermor">
+                        </a>
+                    </div>
+                    <ul class="top-menu">
+                        <li><a href="#">Технологии</a></li>
+                        <li><a href="#">история бренда</a></li>
+                        <li><a href="#">Экологичный подход</a></li>
+                        <li><a href="#">Где купить</a></li>
+                    </ul>
+                    <button class="burger-btn"><span>Menu</span></button>
+                </div>
+            </div>
+            <div class="container navbar">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="/"><span class="icon-home"></span><span class="word">Главная</span></a></li>
+                        <li><a href="about-us.html">О нас</a></li>
+                        <li><a href="catalog.html">Каталог продукции</a></li>
+                        <li><a href="service.html">Сервис</a></li>
+                    </ul>
+                </nav>
+                <ul class="social">
+                    <li><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li><a href="#"><span class="icon-youtube"></span></a></li>
+                    <li><a href="#"><span class="icon-instagram"></span></a></li>
+                </ul>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <ul class="breadcrumbs">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О НАС</a></li>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Водонагреватели</a></li>
+                    <li><a href="#">Сервис</a></li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="search-header-holder">
+                    <form class="search-header-form" action="/search">
+                        <div class="input-holder">
+                            <input type="text" id="search-data" class="search-input" name="value" placeholder="Выбрать город">
+                            <button type="submit" class="search-submit"><span class="icon-search"></span></button>
+                        </div>
+                        <div class="search-result-holder">
+                            <div class="search-result-item">
+                                <a href="#">Москва</a>
+                            </div>
+                            <div class="search-result-item">
+                                <a href="#">Санкт-Петербург</a>
+                            </div>
+                            <div class="search-result-item">
+                                <a href="#">Нижний Новгород</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <section class="services-block">
+                <div id="map"></div>
+                <div class="table-holder">
+                    <div class="table-wrap">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="/"><span class="icon-home"></span><span class="word">Главная</span></a></li>
+                        <li><a href="about-us.html">О нас</a></li>
+                        <li><a href="catalog.html">Каталог продукции</a></li>
+                        <li><a href="service.html">Сервис</a></li>
+                    </ul>
+                </nav>
+                <div class="tel">
+                    ИНФОРМАЦИОННАЯ ЛИНИЯ  8-800-100-21-77, 8-925-805-24-53
+                </div>
+                <ul class="social">
+                    <li><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li><a href="#"><span class="icon-youtube"></span></a></li>
+                    <li><a href="#"><span class="icon-instagram"></span></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" defer></script>
+<!--     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn-fuyeDaWJelm9I4t4aUvlkpNXsLv1Nc&signed_in=true&callback=initMap">
+    </script> -->
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn-fuyeDaWJelm9I4t4aUvlkpNXsLv1Nc&callback=initMap" type="text/javascript"></script>
+    <!-- <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script> -->
+    <script src="assets/js/vendor.min.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <script type="text/javascript" defer>
+        document.addEventListener("DOMContentLoaded", function(){
+            mapInit();
+            function mapInit(){
+                var map = new GMaps({ 
+                    div: '#map',
+                    zoom: 10,
+                    lat: 55.7363155,
+                    lng: 37.6157305,
+                    scrollwheel: false
+                });
+                map.addMarker({
+                    lat: 55.800948, 
+                    lng: 37.594579,
+                    title: 'ООО &#8220;АТИС-КО&#8220;',
+                    icon: "assets/images/marker.svg",
+                    infoWindow: {
+                        content: '<h2>ООО &#8220;АТИС-КО&#8220;</h2><p>г. Москва, ул. Складочная, д. 1, стр. 1, тел.:+7 495 925-75-63, sale1@thermor.ru</p>'
+                    }
+                });
+                map.addMarker({
+                    lat: 55.884699, 
+                    lng: 37.634801,
+                    title: 'ООО Торговый дом “Водогрей“',
+                    icon: "assets/images/marker.svg",
+                    infoWindow: {
+                        content: '<h2>ООО Торговый дом “Водогрей“</h2><p>Московская область, Мытищинский район, д. Грибки, Дмитровское шоссе, 64 Б, время работы: ПН-ПТ с 9:00 до 16:30, тел.: +7 495 741 94 70</p>'
+                    }
+                });
+                map.addMarker({
+                    lat: 55.600951, 
+                    lng: 37.482029,
+                    title: 'ООО “Сантехмир“',
+                    icon: "assets/images/marker.svg",
+                    infoWindow: {
+                        content: '<h2>ООО “Сантехмир“</h2><p>г. Москва, 41 км МКАД,  Рынок «Славянский мир», линия Л, пав. №4&#47;4;  тел.: +7 495 789 03 33, факс: 8 800 700 38 03. Интернет-магазин www.teplodivo.ru</p>'
+                    }
+                });
+                map.addMarker({
+                    lat: 53.735200, 
+                    lng: 91.428057,
+                    title: 'ООО “Атлантик-Хакасия“',
+                    icon: "assets/images/marker.svg",
+                    size: 'small',
+                    infoWindow: {
+                        content: '<h2>ООО “Атлантик-Хакасия“</h2><p>655017, г. Абакан, ул. Крылова, 92, +7-3902-26-23-09, 26-55-13, e-mail: teplocentr-abakan@mail.ru</p>'
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
