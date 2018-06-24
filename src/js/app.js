@@ -16,6 +16,7 @@ import hideCategory from './modules/hide-category';
 import fixedTop from './modules/fixed-top';
 import mapSelect from './modules/map-select';
 import scrollToCategory from './modules/scroll-to-category';
+import moveBlock from './modules/move-block';
 
 (($) => {
     'use strict';
@@ -35,6 +36,7 @@ import scrollToCategory from './modules/scroll-to-category';
         fixedTop.fixedTopInit($);
         mapSelect.mapSelectInit($);
         scrollToCategory.scrollToCategoryInit($);
+        moveBlock.moveBlockInit($);
     });
 
 })(jQuery);

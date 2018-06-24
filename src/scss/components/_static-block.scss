@@ -1,3 +1,26 @@
+.static-blocks-holder{
+	position: relative;
+	.hide &{
+		&:after{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&:after{
+		@include animate(opacity visibility);
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		background: #fff;
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
 .static-block{
 	font-weight: 100;
 	line-height: 1.4;
@@ -6,7 +29,7 @@
 		font-size: 18px;
 		padding: 35px 0 15px;
 	}
-	&.grey-bg{
+	&:nth-child(even){
 		background: #f2f2f2;
 	}
 	.container{
