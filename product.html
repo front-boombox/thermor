@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <script>
+        if(document.body.classList.contains('about-us-page')){
+            document.body.classList.add('hide');
+        }
+    </script>
     <div id="wrapper">
         <header class="header flag-active">
             <div class="top-line">
@@ -21,10 +26,10 @@
                         </a>
                     </div>
                     <ul class="top-menu">
-                        <li><a href="#">Технологии</a></li>
-                        <li><a href="#">история бренда</a></li>
-                        <li><a href="#">Экологичный подход</a></li>
-                        <li><a href="#">Где купить</a></li>
+                        <li><a href="about-us.html#technologies">Технологии</a></li>
+                        <li><a href="about-us.html#history">история бренда</a></li>
+                        <li><a href="about-us.html#approach">Экологичный подход</a></li>
+                        <li><a href="about-us.html#buy">Где купить</a></li>
                     </ul>
                     <button class="burger-btn"><span>Menu</span></button>
                 </div>

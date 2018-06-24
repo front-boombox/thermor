@@ -37,7 +37,32 @@ var _createProductPopup = require('./modules/create-product-popup');
 
 var _createProductPopup2 = _interopRequireDefault(_createProductPopup);
 
+var _hideCategory = require('./modules/hide-category');
+
+var _hideCategory2 = _interopRequireDefault(_hideCategory);
+
+var _fixedTop = require('./modules/fixed-top');
+
+var _fixedTop2 = _interopRequireDefault(_fixedTop);
+
+var _mapSelect = require('./modules/map-select');
+
+var _mapSelect2 = _interopRequireDefault(_mapSelect);
+
+var _scrollToCategory = require('./modules/scroll-to-category');
+
+var _scrollToCategory2 = _interopRequireDefault(_scrollToCategory);
+
+var _moveBlock = require('./modules/move-block');
+
+var _moveBlock2 = _interopRequireDefault(_moveBlock);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// You can write a call and import your functions in this file.
+//
+// This file will be compiled into app.js and will not be minified.
+// Feel free with using ES6 here.
 
 (function ($) {
     'use strict';
@@ -54,13 +79,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         _tabs2.default.tabsInit($);
         _headerScroll2.default.headerScrollInit($);
         _createProductPopup2.default.createProductPopupInit($);
+        _hideCategory2.default.hideCategoryInit($);
+        _fixedTop2.default.fixedTopInit($);
+        _mapSelect2.default.mapSelectInit($);
+        _scrollToCategory2.default.scrollToCategoryInit($);
+        _moveBlock2.default.moveBlockInit($);
     });
-})(jQuery); // You can write a call and import your functions in this file.
-//
-// This file will be compiled into app.js and will not be minified.
-// Feel free with using ES6 here.
+})(jQuery);
 
-},{"./modules/burger":2,"./modules/create-product-popup":3,"./modules/custom-select":4,"./modules/header-scroll":5,"./modules/logo-animate":6,"./modules/main-slider":7,"./modules/product-slider":8,"./modules/product-zoom":9,"./modules/tabs":10}],2:[function(require,module,exports){
+},{"./modules/burger":2,"./modules/create-product-popup":3,"./modules/custom-select":4,"./modules/fixed-top":5,"./modules/header-scroll":6,"./modules/hide-category":7,"./modules/logo-animate":8,"./modules/main-slider":9,"./modules/map-select":10,"./modules/move-block":11,"./modules/product-slider":12,"./modules/product-zoom":13,"./modules/scroll-to-category":14,"./modules/tabs":15}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -84,7 +111,6 @@ var burger = {
             $navbar.fadeToggle();
         }
     }
-
 };
 
 exports.default = burger;
@@ -107,14 +133,38 @@ var createProductPopup = {
             $('.popup-holder').addClass('popup-show');
             $.ajax({
                 method: "GET",
-                url: "popup.html",
+                url: "../../popup.html",
                 success: function success(html) {
                     $("#insertdata").html(html);
+                    $('.popup-slider .popup-slider-for').slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        fade: true,
+                        asNavFor: '.popup-slider .popup-slider-nav'
+                    });
+
+                    $('.popup-slider .popup-slider-nav').slick({
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        arrows: false,
+                        asNavFor: '.popup-slider .popup-slider-for',
+                        dots: false,
+                        vertical: true,
+                        verticalSwiping: true,
+                        focusOnSelect: true
+
+                    });
+                    $(".popup-slider .popup-slider-for .slick-slide").zoom({ on: "grab" });
                 }
-            }).done(function (html) {});
+            });
+        });
+
+        $('div.popup-holder').delegate('.close-popup, .popup-overlay', "click", function () {
+            $('.popup-holder').removeClass('popup-show');
+            $("#insertdata").html('');
         });
     }
-
 };
 
 exports.default = createProductPopup;
@@ -141,12 +191,38 @@ var customSelect = {
 
         jcf.replaceAll();
     }
-
 };
 
 exports.default = customSelect;
 
 },{}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var fixedTop = {
+    fixedTopInit: function fixedTopInit($) {
+        var $fixedTopWrap = $('.fixed-top'),
+            $contentWrap = $('.content-wrap');
+
+        if (!$fixedTopWrap.length) {
+            return;
+        }
+
+        $(window).on('resize', fixedTopHandler).trigger('resize');
+
+        function fixedTopHandler() {
+            setTimeout(function () {
+                $contentWrap.css('margin-top', $('.fixed-top').outerHeight() + 'px');
+            }, 1000);
+        }
+    }
+};
+
+exports.default = fixedTop;
+
+},{}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -170,12 +246,40 @@ var headerScroll = {
             }
         }
     }
-
 };
 
 exports.default = headerScroll;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var hideCategory = {
+    hideCategoryInit: function hideCategoryInit($) {
+        var $categoryItem = $('.category-tabs .item');
+
+        if (!$categoryItem.length) {
+            return;
+        }
+
+        $categoryItem.on('click', function () {
+            if ($(this).hasClass('current')) {
+                $('.category-tabs-content').css('display', 'none');
+                $(this).removeClass('current');
+            } else {
+                $('.category-tabs-content').css('height', 'auto');
+                $('.category-tabs .item').removeClass('current');
+                $(this).addClass('current');
+            }
+        });
+    }
+};
+
+exports.default = hideCategory;
+
+},{}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -193,12 +297,11 @@ var logoAnimate = {
             $header.removeClass('flag-active');
         }, 3000);
     }
-
 };
 
 exports.default = logoAnimate;
 
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -221,12 +324,78 @@ var mainSlider = {
 												cssEase: 'linear'
 								});
 				}
-
 };
 
 exports.default = mainSlider;
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var mapSelect = {
+    mapSelectInit: function mapSelectInit($) {
+        var $mapSelectWrap = $('#select_city');
+
+        if (!$mapSelectWrap.length) {
+            return;
+        }
+
+        $mapSelectWrap.on('change', function () {
+            window.location.href = $(this).val();
+        });
+    }
+};
+
+exports.default = mapSelect;
+
+},{}],11:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var moveBlock = {
+    moveBlockInit: function moveBlockInit($) {
+        var $topMenuItem = $('.header .top-menu a'),
+            $body = $('body');
+
+        if (!$topMenuItem.length) {
+            return;
+        }
+
+        moveBlockHandler();
+
+        $topMenuItem.bind('click', function (e) {
+            if ($body.hasClass('about-us-page')) {
+                e.preventDefault();
+                moveBlockHandler.call(this, $body.hasClass('about-us-page'));
+            }
+        });
+
+        function moveBlockHandler(flag) {
+            var thisHref = void 0;
+            if (flag) {
+                thisHref = $(this).attr('href').split('#')[1];
+                $body.addClass('hide');
+            } else {
+                thisHref = window.location.hash.split('#')[1];
+            }
+            setTimeout(function () {
+                $(".static-blocks-holder").prepend($('.static-blocks-holder #' + thisHref));
+                setTimeout(function () {
+                    $('html, body').scrollTop(0);
+                    $body.removeClass('hide');
+                }, 300);
+            }, 300);
+        }
+    }
+};
+
+exports.default = moveBlock;
+
+},{}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -263,12 +432,11 @@ var productSlider = {
             }]
         });
     }
-
 };
 
 exports.default = productSlider;
 
-},{}],9:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -287,12 +455,44 @@ var productZoom = {
             touch: "false"
         });
     }
-
 };
 
 exports.default = productZoom;
 
-},{}],10:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var scrollToCategory = {
+	scrollToCategoryInit: function scrollToCategoryInit($) {
+		var $categoryItemWrap = $('.category-tabs .item');
+
+		if (!$categoryItemWrap.length) {
+			return;
+		}
+
+		$categoryItemWrap.on('click', scrollToCategoryHandler);
+
+		function scrollToCategoryHandler() {
+			if ($(window).width() < 480) {
+				var $categoryBlockTop = $('.category-tabs > ul.container').offset().top + $('.category-tabs > ul.container').outerHeight(),
+				    $headerHeight = $('.header').outerHeight();
+
+				setTimeout(function () {
+					$('html, body').animate({
+						scrollTop: $categoryBlockTop - $headerHeight
+					}, 400);
+				}, 500);
+			}
+		}
+	}
+};
+
+exports.default = scrollToCategory;
+
+},{}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -310,7 +510,6 @@ var tabs = {
             $(this).addClass('active').siblings().removeClass('active').closest('.tabs').find('.product-info-container').removeClass('active').eq($(this).index()).addClass('active');
         });
     }
-
 };
 
 exports.default = tabs;
