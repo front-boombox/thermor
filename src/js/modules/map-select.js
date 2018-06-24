@@ -9,7 +9,6 @@ let mapSelect = {
         $mapSelectWrap.on('change', function(){
 			window.location.href = $(this).val();
 		});
-
     }
 };
 

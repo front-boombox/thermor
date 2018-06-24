@@ -12,7 +12,6 @@ let tabs = {
 		    	.eq($(this).index()).addClass('active');
 		});
     }
-
 };
 
 export default tabs;

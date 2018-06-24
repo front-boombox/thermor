@@ -14,9 +14,7 @@ let fixedTop = {
                 $contentWrap.css('margin-top', `${$('.fixed-top').outerHeight()}px`);
             }, 1000);
         }
-
     }
-
 };
 
 export default fixedTop;

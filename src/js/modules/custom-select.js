@@ -14,7 +14,6 @@ let customSelect = {
 
         jcf.replaceAll();
     }
-
 };
 
 export default customSelect;

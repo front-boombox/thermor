@@ -10,9 +10,7 @@ let productZoom = {
         	on: "grab",
         	touch: "false"
         });
-
     }
-
 };
 
 export default productZoom;

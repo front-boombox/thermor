@@ -15,9 +15,7 @@ let headerScroll = {
               $header.removeClass('sticky');
             }
         }
-
     }
-
 };
 
 export default headerScroll;

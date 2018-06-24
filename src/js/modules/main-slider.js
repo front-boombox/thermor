@@ -14,9 +14,7 @@ let mainSlider = {
 			fade: true,
 			cssEase: 'linear'
 		});
-
     }
-
 };
 
 export default mainSlider;

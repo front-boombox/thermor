@@ -17,7 +17,6 @@ let hideCategory = {
             }
         });
     }
-
 };
 
 export default hideCategory;

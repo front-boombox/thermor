@@ -43,7 +43,6 @@ let createProductPopup = {
             $("#insertdata").html('');
         });
     }
-
 };
 
 export default createProductPopup;

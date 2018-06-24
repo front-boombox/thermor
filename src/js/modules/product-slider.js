@@ -30,9 +30,7 @@ let productSlider = {
                 }
             ]
         });
-
     }
-
 };
 
 export default productSlider;

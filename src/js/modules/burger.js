@@ -16,7 +16,6 @@ let burger = {
           $navbar.fadeToggle();
         }
     }
-
 };
 
 export default burger;
