@@ -7,9 +7,12 @@
 			margin-bottom: 30px;
 		}
 		.item{
-			margin-bottom: 35px;
+			margin-bottom: 95px;
 			@include media('<tablet') {
-				margin-bottom: 20px;
+				margin-bottom: 70px;
+			}
+			@include media('<phone') {
+				margin-bottom: 50px;
 			}
 			.title{
 				font-weight: 500;
@@ -35,24 +38,31 @@
 	}
 	.item{
 		width: 32%;
+		max-height: 358px;
 		margin: 0 0 40px;
 		@include media('<desktop') {
 			margin-bottom: 30px;
 		}
 		@include media('<phone') {
 			width: 100%;
+			height: 250px;
 			margin-bottom: 20px;
 		}
 		a{
 			@include animate(opacity);
 			text-decoration: none;
 			display: block;
+			height: 100%;
+			@include media('<phone') {
+				height: 90%;
+			}
 			&:hover{
 				opacity: .7;
 			}
 		}
 		.img-holder{
 			margin: 0 0 35px;
+			height: 100%;
 			@include media('<desktop') {
 				margin-bottom: 15px;
 			}
@@ -62,6 +72,8 @@
 		}
 		img{
 			width: 100%;
+			height: 100%;
+			object-fit: cover;
 			vertical-align: top;
 		}
 		.title{

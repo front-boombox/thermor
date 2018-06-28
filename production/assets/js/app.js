@@ -131,38 +131,30 @@ var createProductPopup = {
 
         $showPopupBtn.on('click', function () {
             $('.popup-holder').addClass('popup-show');
-            $.ajax({
-                method: "GET",
-                url: "../../popup.html",
-                success: function success(html) {
-                    $("#insertdata").html(html);
-                    $('.popup-slider .popup-slider-for').slick({
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        arrows: true,
-                        fade: true,
-                        asNavFor: '.popup-slider .popup-slider-nav'
-                    });
-
-                    $('.popup-slider .popup-slider-nav').slick({
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        arrows: false,
-                        asNavFor: '.popup-slider .popup-slider-for',
-                        dots: false,
-                        vertical: true,
-                        verticalSwiping: true,
-                        focusOnSelect: true
-
-                    });
-                    $(".popup-slider .popup-slider-for .slick-slide").zoom({ on: "grab" });
-                }
+            $('.popup-slider .popup-slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                fade: true,
+                asNavFor: '.popup-slider .popup-slider-nav'
             });
+
+            $('.popup-slider .popup-slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+                asNavFor: '.popup-slider .popup-slider-for',
+                dots: false,
+                vertical: true,
+                verticalSwiping: true,
+                focusOnSelect: true
+
+            });
+            $(".popup-slider .popup-slider-for .slick-slide").zoom({ on: "grab" });
         });
 
         $('div.popup-holder').delegate('.close-popup, .popup-overlay', "click", function () {
             $('.popup-holder').removeClass('popup-show');
-            $("#insertdata").html('');
         });
     }
 };
@@ -379,6 +371,7 @@ var moveBlock = {
             if (flag) {
                 thisHref = $(this).attr('href').split('#')[1];
                 $body.addClass('hide');
+                $('.static-block').css('transform', 'translateY(-10px)');
             } else {
                 thisHref = window.location.hash.split('#')[1];
             }
@@ -387,6 +380,7 @@ var moveBlock = {
                 setTimeout(function () {
                     $('html, body').scrollTop(0);
                     $body.removeClass('hide');
+                    $('.static-block').css('transform', 'translateY(10px)');
                 }, 300);
             }, 300);
         }

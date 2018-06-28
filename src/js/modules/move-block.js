@@ -21,6 +21,7 @@ let moveBlock = {
             if(flag){
                 thisHref = $(this).attr('href').split('#')[1];
                 $body.addClass('hide');
+                $('.static-block').css('transform', 'translateY(-10px)');
             } else {
                 thisHref = window.location.hash.split('#')[1];
             }
@@ -29,6 +30,7 @@ let moveBlock = {
                 setTimeout(function(){
                     $('html, body').scrollTop(0);
                     $body.removeClass('hide');
+                    $('.static-block').css('transform', 'translateY(10px)');
                 }, 300);
             }, 300);
         }
