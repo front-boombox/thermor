@@ -141,14 +141,14 @@ var createProductPopup = {
 
             $('.popup-slider .popup-slider-nav').slick({
                 slidesToShow: 3,
-                slidesToScroll: 1,
+                slidesToScroll: 3,
                 arrows: false,
                 asNavFor: '.popup-slider .popup-slider-for',
                 dots: false,
                 vertical: true,
+                infinite: false,
                 verticalSwiping: true,
                 focusOnSelect: true
-
             });
             $(".popup-slider .popup-slider-for .slick-slide").zoom({ on: "grab" });
         });

@@ -161,6 +161,7 @@
 				display: none;
 			}
 			.slide{
+				@include animate(border-color);
 				width: 120px;
 				height: 120px;
 				border: 1px solid map-get($colors, 'light-grey');
@@ -168,6 +169,9 @@
 				position: relative;
 				margin: 10px 0;
 				outline: none;
+				&.slick-current{
+					border-color: grey;
+				}
 				img{
 					height: 100%;
 					display: inline-block;

@@ -40,6 +40,9 @@
 			@include media('<widescreen') {
 				margin: 0 10px;
 			}
+			&.slick-current{
+				border-color: grey;
+			}
 			img{
 				width: 72px;
 				margin: 0 auto;
